@@ -14,6 +14,7 @@
 
      <!--linking to css-->
      <link rel="stylesheet" href="styles/menu-horizontal.css" />
+     <link rel="stylesheet" href="styles/style.css" />
 
        <!--saying that script takes place in index.js-->
      <script type="module" src="index.js"></script>
@@ -24,76 +25,53 @@
   <div style="margin-left: 50px;margin-right: auto;width: 80%;" class="vertical-menu">
     <div>
       <ul id="menu" class="menu">
-        <li><a id="page-about" href="#">About</a></li>
-       
-        <div id="logged-in-admin" style="display: none;">
-         
-        </div>
-        <div id="not-logged-in" style="display: block;">
-          <li><a id="page-sign-up" href="#">Sign up</a></li>
-        </div>
-        <div id="logged-in-user" style="display: none;">
-          <li><a id="page-my-details" href="#">My Details</a></li>
-          <li><a id="page-editUser" href="#">Edit user</a></li>
-          <li><a id="page-deleteUser" href="#">delete user</a></li>
-       
-        </div>
-        <li><a id="page-login" href="#">Login</a></li>
-        <li><a id="page-logout" href="#" style="display:none">Logout</a></li>
+
+        <li><a id="page-home" href="#">Home</a></li>
+        <li><a id="page-people" href="#">People</a></li>
+        <li><a id="page-hobby" href="#">Hobby's</a></li>
       </ul>
-      <p id="user-role"></p>
-    </div>
     <div id="content" style="margin-left:15px;padding-top: 1em;"></div>
   </div>
 </body>
 
 </html>
 
-<template data-id="page-about">
-    <h2>Enhjørninger </h2>
-    <img src="images/logo.PNG" alt="cars logo" />
+<template data-id="page-home">
+  <h2>Welcome to the people's search engine</h2>
+  <img src="./images/3musk.jpg" alt="musketers">
+
 </template>
 
-<template data-id="page-sign-up">
-    <h2>Sign up as user with Car's 'R' Us</h2>
-    <p>Here you should be abble to signup as a new user</p>
-  </template>
-
-<!--Login -->
-<template data-id="page-login">
-    <div style="margin:150px;">
-      <p style="font-style: italic;">Right now you can only perform a DUMMY Login (no server involved),
-        either as a USER or as an ADMIN. This, just to see how the UI reflects your logged-in status (Anonymous, USER or
-        ADMIN
-      </p>
-      <h2>Login</h2>
-      <form>
-        <input placeholder="User Name" id="username" />
-        <input placeholder="Password" id="password" />
-        <div style="margin-top:1em;">
-          <button id="btn-login" class="btn btn-primary">Login (dummy login as USER)</button>
-          <br /><br />
-          <button id="btn-login2" class="btn btn-primary">Login (dummy login as ADMIN)</button>
+<template data-id="page-people">
+  <div class="people-menu">
+        <a id="page-addPerson" href="#">Add person</a>
+        <a id="page-editPerson" href="#">Edit person</a>
+        <a id="page-deletePerson" href="#">Delete person</a>
+        <div class="search-container">
+          <form>
+            <input id="people-search" type="text" placeholder="Search..">
+            <button type="submit"><img src="./images/outline_search_black_24dp.png" alt="search" style="height: 1em; width: 1em;"> </button>
+          </form>
         </div>
-      </form>
-    </div>
-  </template>
-
-  <!--Template when you are logged in-->
-
-  <template data-id="page-my-details">
-    <h2>My Details</h2>
-    <p>Here you should see name, address etc. for the loged in member</p>
-  </template>
+  </div>
+    <h2>People in the database</h2>
+  <table class="people-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Email</th>
+        <th>Phone</th>
+      </tr>
+    </thead>
+    <tbody id="people-rows"></tbody>
+  </table>
   
-  <template data-id="page-editUser">
-    <h2>Edit my profile </h2>
-    <h3>ONLY FOR ADMINS</h3>
+</template>
+
+<template data-id="page-hobby">
+  <h2>All hobby's you could dream off</h2>
   </template>
 
-  <template data-id="page-deleteUser">
-    <h2>Edit my profile </h2>
-    <h3>ONLY FOR ADMINS</h3>
-  </template>
- 
  

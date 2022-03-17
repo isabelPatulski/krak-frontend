@@ -12,4 +12,14 @@ ul {
     display: inline;
     margin-right: 5px;
   }
+
+#people-search{
+  width: 30em;
+  margin-left: 5em;
+
   
+}
+
+.searchform input[type=text] {
+  border: 1px solid #ccc;  
+}

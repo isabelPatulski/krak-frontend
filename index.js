@@ -1,5 +1,4 @@
-import{} from "./utils.js"
-import{} from "./js-for-pages/login.js"
+import{renderTemplate, setActive, showPage} from "./utils.js"
 
 function renderMenuItems(evt) {
     const element = evt.target
@@ -8,35 +7,19 @@ function renderMenuItems(evt) {
     renderTemplate(id)  //This setups the HTML for the page
     switch (id) {
       //Here you can execute JavaScript for the selected page
-      // case "page-1": {
-      //   break
-      // }
-      case "page-about": {
+      case "page-home": {
         break
       }
-      case "page-login": {
-        setupLoginHandlers()
+      case "page-people": {
         break
       }
-      case "page-logout": {
-        logout()
-        break
-      }
-      case "page-my-details": {
-    
-        break
-      }
-      case "page-editUser": {
-    
-        break
-      }
-      case "page-deleteUser": {
-    
+      case "page-hobby": {
+        
         break
       }
     }
   }
 
   document.getElementById("menu").onclick = renderMenuItems;
-showPage("page-about") //Set the default page to render
+showPage("page-home") //Set the default page to render
 updateLoginDependentComponents()
