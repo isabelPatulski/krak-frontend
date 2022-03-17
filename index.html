@@ -28,7 +28,7 @@
 
         <li><a id="page-home" href="#">Home</a></li>
         <li><a id="page-people" href="#">People</a></li>
-        <li><a id="page-hobby" href="#">Hobby's</a></li>
+        <li><a id="page-hobby" href="#">Hobbies</a></li>
       </ul>
     <div id="content" style="margin-left:15px;padding-top: 1em;"></div>
   </div>
@@ -71,7 +71,26 @@
 </template>
 
 <template data-id="page-hobby">
-  <h2>All hobby's you could dream off</h2>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Build a table</title>
+    </head>
+    <body>
+    <h2>All the hobbies you could dream off!</h2>
+    <div class="search-container">
+        <form>
+            <input id="hobby-search" type="text" placeholder="Search..">
+            <button type="submit"><img src="./images/outline_search_black_24dp.png" alt="search" style="height: 1em; width: 1em;"> </button>
+        </form>
+    </div>
+    <table>
+        <!-- here goes our data! -->
+    </table>
+    </body>
+    <script src="build-table.js"></script>
+    </html>
+
   </template>
 
  

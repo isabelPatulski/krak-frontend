@@ -1,4 +1,5 @@
 import{renderTemplate, setActive, showPage} from "./utils.js"
+import {showHobbies} from "./js-pages/createHobby.js";
 
 function renderMenuItems(evt) {
     const element = evt.target
@@ -14,7 +15,7 @@ function renderMenuItems(evt) {
         break
       }
       case "page-hobby": {
-        
+        showHobbies()
         break
       }
     }
