@@ -1,7 +1,6 @@
 
 
 
-const URL="JDBC_DATABASE_URL=jdbc:mysql://20.223.194.5:3306/krak;JDBC_USERNAME=root;JDBC_PASSWORD=123456"
 
 export function showHobbies(){
     let table = document.querySelector("table");
@@ -20,12 +19,12 @@ function generateTableHeader(table) {
 }
 
 function generateTableRows(table, data) {
-    for (let element of data) {
+    //for (let element of data) {
         let row = table.insertRow();
         let cell = row.insertCell();
-       // let text = document.createTextNode(element[key]);
-       // cell.appendChild(text);
-    }
+        let text = document.createTextNode("VolleyBall");
+        cell.appendChild(text);
+    //}
 }
 
 
