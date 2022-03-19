@@ -1,5 +1,5 @@
 import{renderTemplate, setActive, showPage} from "./utils.js"
-import {showHobbies} from "./js-pages/createHobby.js";
+import {showHobbies, searchHobbyHandler} from "./js-pages/createHobby.js";
 
 function renderMenuItems(evt) {
     const element = evt.target
@@ -15,7 +15,9 @@ function renderMenuItems(evt) {
         break
       }
       case "page-hobby": {
-        showHobbies()
+        showHobbies();
+        searchHobbyHandler()
+
         break
       }
     }
@@ -23,4 +25,4 @@ function renderMenuItems(evt) {
 
   document.getElementById("menu").onclick = renderMenuItems;
 showPage("page-home") //Set the default page to render
-updateLoginDependentComponents()
+//updateLoginDependentComponents()
