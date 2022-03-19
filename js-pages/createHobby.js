@@ -28,32 +28,22 @@ function generateTableHeader(table) {
     row.appendChild(th);
 }
 
+function insertHobbyRow(table, hobby) {
+    let row = table.insertRow();
+    let cell = row.insertCell();
+    let text = document.createTextNode(hobby);
+    cell.appendChild(text);
+}
+
 function generateTableRows(table, data) {
     //for (let element of data) {
-        let row = table.insertRow();
-        let cell = row.insertCell();
-        let text2 = document.createTextNode("Painting");
-        cell.appendChild(text2);
-    let row2 = table.insertRow();
-    let cell2 = row2.insertCell();
-        let text3 = document.createTextNode("Photography");
-        cell2.appendChild(text3);
-    let row3 = table.insertRow();
-    let cell3 = row3.insertCell();
-        let text4 = document.createTextNode("Running");
-        cell3.appendChild(text4);
-    let row4 = table.insertRow();
-    let cell4 = row4.insertCell();
-        let text5 = document.createTextNode("Eating");
-        cell4.appendChild(text5);
-    let row5 = table.insertRow();
-    let cell5 = row5.insertCell();
-        let text6 = document.createTextNode("Ice Skating");
-        cell5.appendChild(text6);
-    let row6 = table.insertRow();
-    let cell6 = row6.insertCell();
-        let text7 = document.createTextNode("Sleeping");
-        cell6.appendChild(text7);
+        insertHobbyRow(table, "Painting")
+        insertHobbyRow(table,"Photography")
+        insertHobbyRow(table,"Running")
+        insertHobbyRow(table,"Eating")
+        insertHobbyRow(table,"Ice skating")
+        insertHobbyRow(table,"Sleeping")
+
     //}
 }
 export function searchHobbyHandler(){
@@ -74,6 +64,7 @@ export function searchHobby(){
             td = tr[i].getElementsByTagName("td")[0];
             if (td) {
                 txtValue = td.textContent || td.innerText;
+                //Her sker sammenligningen
                 if (txtValue.toUpperCase().indexOf(filter) > -1) {
                     tr[i].style.display = "";
                 } else {
@@ -81,10 +72,5 @@ export function searchHobby(){
                 }
             }
         }
-
-}
-
-
-function showAllHobbies(){
 
 }
