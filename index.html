@@ -15,6 +15,8 @@
      <!--linking to css-->
      <link rel="stylesheet" href="styles/menu-horizontal.css" />
      <link rel="stylesheet" href="styles/style.css" />
+     <link rel="stylesheet" href="styles/menu-people.css" />
+
 
        <!--saying that script takes place in index.js-->
      <script type="module" src="index.js"></script>
@@ -30,7 +32,7 @@
         <li><a id="page-people" href="#">People</a></li>
         <li><a id="page-hobby" href="#">Hobby's</a></li>
       </ul>
-    <div id="content" style="margin-left:15px;padding-top: 1em;"></div>
+    <div id="content"></div>
   </div>
 </body>
 
@@ -43,16 +45,16 @@
 </template>
 
 <template data-id="page-people">
-  <div class="people-menu">
-        <a id="page-addPerson" href="#">Add person</a>
-        <a id="page-editPerson" href="#">Edit person</a>
-        <a id="page-deletePerson" href="#">Delete person</a>
-        <div class="search-container">
-          <form>
-            <input id="people-search" type="text" placeholder="Search..">
-            <button type="submit"><img src="./images/outline_search_black_24dp.png" alt="search" style="height: 1em; width: 1em;"> </button>
-          </form>
-        </div>
+  <div id="people-menu" class="people-menu">
+    <a id="page-addPerson" href="#">Add person</a>
+    <a id="page-editPerson" href="#">Edit person</a>
+    <a id="page-deletePerson" href="#">Delete person</a>
+    <div class="search-container">
+      <form>
+        <input id="people-search" type="text" placeholder="Search..">
+        <button type="submit"><img src="./images/outline_search_black_24dp.png" alt="search" style="height: 1em; width: 1em;"> </button>
+      </form>
+    </div>
   </div>
     <h2>People in the database</h2>
   <table class="people-table">
@@ -71,7 +73,17 @@
 </template>
 
 <template data-id="page-hobby">
-  <h2>All hobby's you could dream off</h2>
+  <h2>All hobbyies you could dream off</h2>
   </template>
-
  
+<template data-id="page-addPerson">
+  <h2>Add a Person</h2>
+</template>
+
+<template data-id="page-editPerson">
+  <h2>Edit a Person</h2>
+</template>
+
+<template data-id="page-deletePerson">
+  <h2>Delete a Person</h2>
+</template>
