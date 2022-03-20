@@ -1,10 +1,10 @@
-.people-menu {
+#people-menu {
     overflow: hidden;
     background-color:#444;
     ;
   }
 
-.people-menu a {
+#people-menu a {
     float: left;
     display: block;
     color: white;
@@ -14,27 +14,27 @@
     font-size: 17px;
     width: fit-content;
   }
-  .people-menu a:hover {
+  #people-menu a:hover {
     background-color: #555;
     color: white;
   }
   
-  .people-menu a.active {
+  #people-menu a.active {
     background-color: #04aa6d;
     color: white;
   }
-  .people-menu .search-container {
+  #people-menu .search-container {
     float: right;
   }
   
-  .people-menu input[type=text] {
+  #people-menu input[type=text] {
     padding: 6px;
     margin-top: 8px;
     font-size: 17px;
     border: none;
   }
   
-  .people-menu .search-container button {
+  #people-menu .search-container button {
     float: right;
     padding: 6px 10px;
     margin-top: 8px;
@@ -44,6 +44,6 @@
     border: none;
     cursor: pointer;
   }
-  .people-menu .search-container button:hover {
+  #people-menu .search-container button:hover {
     background: #ccc;
   }

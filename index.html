@@ -27,10 +27,9 @@
   <div style="margin-left: 50px;margin-right: auto;width: 80%;" class="vertical-menu">
     <div>
       <ul id="menu" class="menu">
-
         <li><a id="page-home" href="#">Home</a></li>
         <li><a id="page-people" href="#">People</a></li>
-        <li><a id="page-hobby" href="#">Hobby's</a></li>
+        <li><a id="page-hobby" href="#">Hobbies</a></li>
       </ul>
     <div id="content"></div>
   </div>
@@ -41,11 +40,10 @@
 <template data-id="page-home">
   <h2>Welcome to the people's search engine</h2>
   <img src="./images/3musk.jpg" alt="musketers">
-
 </template>
 
 <template data-id="page-people">
-  <div id="people-menu" class="people-menu">
+  <div id="people-menu" style="display: block;">
     <a id="page-addPerson" href="#">Add person</a>
     <a id="page-editPerson" href="#">Edit person</a>
     <a id="page-deletePerson" href="#">Delete person</a>
@@ -55,8 +53,9 @@
         <button type="submit"><img src="./images/outline_search_black_24dp.png" alt="search" style="height: 1em; width: 1em;"> </button>
       </form>
     </div>
+  
   </div>
-    <h2>People in the database</h2>
+  <h2>People in the database</h2>
   <table class="people-table">
     <thead>
       <tr>
