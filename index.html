@@ -6,11 +6,11 @@
     <meta name="viewport" content="width='device-width', initial-scale=1.0">
     
     <!--Bootstrap files-->
-     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-     crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+  crossorigin="anonymous"></script>
 
      <!--linking to css-->
      <link rel="stylesheet" href="styles/menu-horizontal.css" />
@@ -20,11 +20,40 @@
 
        <!--saying that script takes place in index.js-->
      <script type="module" src="index.js"></script>
+
+     <script>
+      function seePerson() {
+        document.getElementById("seePerson").style.display = "block";
+        document.getElementById("addPerson").style.display = "none";
+        document.getElementById("editPerson").style.display = "none";
+        document.getElementById("deletePerson").style.display = "none";
+      }
+
+      function addperson() {
+        document.getElementById("seePerson").style.display = "none";
+        document.getElementById("addPerson").style.display = "block";
+        document.getElementById("editPerson").style.display = "none";
+        document.getElementById("deletePerson").style.display = "none";
+      }
+        
+      function editPerson() {
+        document.getElementById("seePerson").style.display = "none";
+        document.getElementById("addPerson").style.display = "none";
+        document.getElementById("editPerson").style.display = "block";
+        document.getElementById("deletePerson").style.display = "none";
+      }
+      function deletePerson() {
+        document.getElementById("seePerson").style.display = "none";
+        document.getElementById("addPerson").style.display = "none";
+        document.getElementById("editPerson").style.display = "none";
+        document.getElementById("deletePerson").style.display = "block";
+      }
+     </script>
    
     <title>krak</title>
 </head>
 <body style="font-family: sans-serif;padding-top: 1em;">
-  <div style="margin-left: 50px;margin-right: auto;width: 80%;" class="vertical-menu">
+  <div style="margin-left: 1em;margin-right: 1em;" class="vertical-menu">
     <div>
       <ul id="menu" class="menu">
         <li><a id="page-home" href="#">Home</a></li>
@@ -43,32 +72,62 @@
 </template>
 
 <template data-id="page-people">
-  <div id="people-menu" style="display: block;">
-    <a id="page-addPerson" href="#">Add person</a>
-    <a id="page-editPerson" href="#">Edit person</a>
-    <a id="page-deletePerson" href="#">Delete person</a>
+  <div id="people-menu" style="display: block; margin-bottom: 1em;">
+    <a id="page-allperson" href="#" onclick="seePerson()" >All people</a>
+    <a id="page-addPerson" href="#" onclick="addperson()" >Add person</a>
+    <a id="page-editPerson" href="#" onclick="editPerson()">Edit person</a>
+    <a id="page-deletePerson" href="#" onclick="deletePerson()">Delete person</a>
     <div class="search-container">
       <form>
         <input id="people-search" type="text" placeholder="Search..">
         <button type="submit"><img src="./images/outline_search_black_24dp.png" alt="search" style="height: 1em; width: 1em;"> </button>
       </form>
     </div>
-  
   </div>
-  <h2>People in the database</h2>
-  <table class="people-table">
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>First name</th>
-        <th>Last name</th>
-        <th>Email</th>
-        <th>Phone</th>
-      </tr>
-    </thead>
-    <tbody id="people-rows"></tbody>
-  </table>
-  
+
+  <div class="seePerson" id="seePerson" style="display: none">
+    <h1>All people</h1>
+    <table class="people-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>First name</th>
+          <th>Last name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Street</th>
+          <th>Zipcode</th>
+          <th>City</th>
+        </tr>
+      </thead>
+      <tbody id="people-rows"></tbody>
+    </table>
+  </div>
+
+  <div class="addPerson" id="addPerson" style="display: none">
+    <h1>Add person</h1>
+    <form>
+      <input id="input-firstname" placeholder="First name" required />
+      <input id="input-firstname" placeholder="Fast name" required />
+      <input id="input-Email" type="email" placeholder="Email" required />
+      <input id="input-Phone" type="tel" pattern="[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}" required placeholder="Phone number" />
+      <br>
+      <input id="input-street" placeholder="Street" required />
+      <input id="input-zipCode" placeholder="Zip Code" required />
+      <input id="input-city" placeholder="City" required />
+      <br>
+      <button id="btn-add-person">Add person</button>
+    </form>
+  </div>
+
+  <div class="editPerson" id="editPerson" style="display: none">
+    <h1>Edit page</h1>
+  </div>
+
+  <div class="deletePerson" id="deletePerson" style="display: none">
+    <h1>Delete page</h1>
+  </div>
+
 </template>
 
 <template data-id="page-hobby">
