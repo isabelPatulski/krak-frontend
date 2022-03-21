@@ -27,6 +27,10 @@ function makeRows(rows){
   <td> ${people.lastName} </td>
   <td> ${people.email} </td>
   <td> ${people.phone} </td>
+  <td> ${people.street} </td>
+  <td> ${people.zipcode} </td>
+  <td> ${people.city} </td>
+
   </tr>
   `).join("\n")
   document.getElementById("car-rows").innerHTML = trows
