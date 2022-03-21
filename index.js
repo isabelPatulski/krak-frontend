@@ -1,4 +1,5 @@
 import{renderTemplate, setActive, showPage} from "./utils.js"
+import{getAllPeople} from "./js-pages/seePeoplePage.js"
 
 function renderMenuItems(evt) {
     const element = evt.target
@@ -11,6 +12,7 @@ function renderMenuItems(evt) {
         break
       }
       case "page-people": {
+        getAllPeople()
         break
       }
       case "page-hobby": {
