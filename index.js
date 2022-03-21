@@ -33,5 +33,4 @@ function renderMenuItems(evt) {
   }
 
   document.getElementById("menu").onclick = renderMenuItems;
-showPage("page-home") //Set the default page to render
-updateLoginDependentComponents()
+  showPage("page-home") //Set the default page to render

@@ -1,3 +1,7 @@
+body{
+  font-family: sans-serif;
+}
+
 ul {
     list-style-type: none;
     padding: 0;
@@ -14,9 +18,10 @@ ul {
   }
 
 #people-search{
-  width: 30em;
+  max-width: 30em;
+  min-width: 10em;
   margin-left: 5em;
-
+  border-radius: 20px 0 0 20px;
   
 }
 
