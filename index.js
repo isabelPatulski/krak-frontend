@@ -17,18 +17,6 @@ function renderMenuItems(evt) {
         
         break
       }
-      case "page-addPerson": {
-        
-        break
-      }
-      case "page-editPerson": {
-        
-        break
-      }
-      case "page-deletePerson": {
-        
-        break
-      }
     }
   }
 
