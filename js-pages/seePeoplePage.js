@@ -1,5 +1,5 @@
-import {SERVER_URL} from "../settings.js"
-const URL = SERVER_URL+"/people"
+import {LOCAL_SERVER_URL} from "../settings.js"
+const URL = LOCAL_SERVER_URL+"/people"
 
 
 let allPeople = []

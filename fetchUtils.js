@@ -1,4 +1,4 @@
-export function makeOptions(method, body, addToken) {
+export function makeOptions(method, body) {
     const opts = {
       method: method,
       headers: {
@@ -6,11 +6,7 @@ export function makeOptions(method, body, addToken) {
         "Accept": "application/json"
       }
     }
-    /* If we have log in feature
-    if(addToken){
-        opts.headers.Authorization = "Bearer " + sessionStorage.getItem("token")
-    }
-    */
+
     if (body) {
       opts.body = JSON.stringify(body);
     }

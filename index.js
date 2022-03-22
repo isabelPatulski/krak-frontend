@@ -1,6 +1,7 @@
 import{renderTemplate, setActive, showPage} from "./utils.js"
-import {showHobbies, searchHobbyHandler} from "./js-pages/createHobby.js";
+import{showHobbies, searchHobbyHandler} from "./js-pages/createHobby.js";
 import{getAllPeople} from "./js-pages/seePeoplePage.js"
+import{addPersonElement} from "./js-pages/addPerson.js"
 
 function renderMenuItems(evt) {
     const element = evt.target
@@ -14,12 +15,12 @@ function renderMenuItems(evt) {
       }
       case "page-people": {
         getAllPeople()
+        addPersonElement()
         break
       }
       case "page-hobby": {
-        showHobbies();
+        showHobbies()
         searchHobbyHandler()
-
         break
       }
     }
