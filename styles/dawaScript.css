@@ -1,7 +1,3 @@
-label {
-    color: red;
-    }
-
     .autocomplete-container {
         /* relative position for at de absolut positionerede forslag får korrekt placering.*/
         position: relative;
@@ -13,8 +9,9 @@ label {
         box-sizing: border-box;
       }
       .dawa-autocomplete-suggestions {
-        margin: 0.3em 0 0 0;
-        padding: 0;
+        width: 100%;
+        margin: 0.1em 0 0 0;
+        padding: 0.5em 0 0 1.1em;
         text-align: left;
         border-radius: 0.3125em;
         background: #fcfcfc;
@@ -27,7 +24,9 @@ label {
         box-sizing: border-box;
       }
       .dawa-autocomplete-suggestions .dawa-autocomplete-suggestion {
-        margin: 0;
+        margin: 1;
+        font-family: sans-serif;
+        display: table-row;
         list-style: none;
         cursor: pointer;
         padding: 0.4em 0.6em;
