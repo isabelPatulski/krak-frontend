@@ -65,6 +65,7 @@
       </ul>
     <div id="content"></div>
   </div>
+  </div>
 </body>
 
 </html>
@@ -116,7 +117,7 @@
     <h1>Add person</h1>
     <form>
       <input id="input-firstname" placeholder="First name" required />
-      <input id="input-firstname" placeholder="Fast name" required />
+      <input id="input-lastname" placeholder="Last name" required />
       <input id="input-Email" type="email" placeholder="Email" required />
       <input id="input-Phone" type="tel" pattern="[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}" required placeholder="Phone number" />
       <br>
@@ -141,5 +142,35 @@
 </template>
 
 <template data-id="page-hobby">
-  <h2>All hobbyies you could dream off</h2>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Build a table</title>
+  </head>
+  <body>
+  <h2>All the hobbies you could dream off!</h2>
+  <div class="search-container">
+    <form>
+      <input id="hobby-search" type="text" placeholder="Search..">
+      <!-- <button id="btn-search-hobby" type="button" ><img src="./images/outline_search_black_24dp.png" alt="search" style="height: 1em; width: 1em;"> </button> -->
+    </form>
+  </div>
+  <table id="hobby-table" >
+
+  </table>
+  </body>
+
+  </html>
   </template>
+ 
+<template data-id="page-addPerson">
+  <h2>Add a Person</h2>
+</template>
+
+<template data-id="page-editPerson">
+  <h2>Edit a Person</h2>
+</template>
+
+<template data-id="page-deletePerson">
+  <h2>Delete a Person</h2>
+</template>
