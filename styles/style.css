@@ -16,10 +16,16 @@ ul {
     display: inline;
     margin-right: 5px;
   }
+.search-container{
+  padding-top: 8px;
+}
 
 #people-search{
   width: 300px;
-  border-radius: 5px 0 0 5px;
+  border-radius: 5px;
+  margin: auto;
+  padding: 6px 16px;
+
   
 }
 
@@ -52,9 +58,6 @@ ul {
   border: none;
   border-radius: 4px;
   cursor: pointer;
-}
-#people-search_btn{
-  border-radius: 0 5px 5px 0;
 }
 
 .people_content{
