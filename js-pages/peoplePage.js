@@ -1,4 +1,3 @@
-
 const searchInput = document.getElementById("people-search")
 
 if(searchInput){
