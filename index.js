@@ -1,6 +1,7 @@
 import{renderTemplate, setActive, showPage} from "./utils.js"
 import {showHobbies, searchHobbyHandler} from "./js-pages/createHobby.js";
 import{getAllPeople} from "./js-pages/seePeoplePage.js"
+import{convertAddress} from "./js-pages/address.js"
 
 function renderMenuItems(evt) {
     const element = evt.target
@@ -14,6 +15,7 @@ function renderMenuItems(evt) {
       }
       case "page-people": {
         getAllPeople()
+        convertAddress()
         break
       }
       case "page-hobby": {

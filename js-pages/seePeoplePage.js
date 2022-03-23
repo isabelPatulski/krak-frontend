@@ -30,7 +30,6 @@ function makeRows(rows){
   <td> ${people.street} </td>
   <td> ${people.zipcode} </td>
   <td> ${people.city} </td>
-
   </tr>
   `).join("\n")
   document.getElementById("people-rows").innerHTML = trows

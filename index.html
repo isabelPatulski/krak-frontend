@@ -99,7 +99,7 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
-  <script src="node_modules/dawa-autocomplete2/dist/js/dawa-autocomplete2.min.js"></script>
+  <script src="node_modules/dawa-autocomplete2.min.js"></script>
   <script src= node_modules/script.js></script>
 
   <div class="people_content" id="addPerson" style="display: none">
@@ -108,13 +108,13 @@
       <input id="input-firstname" placeholder="First name" required />
       <input id="input-lastname" placeholder="Last name" required />
       <input id="input-Email" type="email" placeholder="Email" required />
-      <input id="input-Phone" type="tel" pattern="[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}" required placeholder="Phone number" />
+      <input id="input-Phone" type="tel" required placeholder="Phone number" />
       <br>
       <label for='adresse'></label>
       <div class='autocomplete-container'>
         <input type="text" id="adresse" placeholder="Addresse">
       </div>
-      <p style="display: none;">Valgt adresse: <span id="valgtadresse"></p>
+      <p style="display: block;">Valgt adresse: <span id="chosenAddresse"></p>
       <br>
       <button id="btn-add-person">Add person</button>
     </form>
