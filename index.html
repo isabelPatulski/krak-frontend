@@ -21,29 +21,25 @@
 
 
        <!--saying that script takes place in index.js-->
-     <script type="module" src="index.js"></script>
-     <script src="./js-pages/peoplePage.js"></script>
-         
+     <script type="module" src="index.js"></script>         
 
      <script>
       function seePerson() {
         document.getElementById("seePerson").style.display = "block";
         document.getElementById("addPerson").style.display = "none";
-        document.getElementById("editPerson").style.display = "none";
-        document.getElementById("deletePerson").style.display = "none";
       }
 
       function addPerson() {
         document.getElementById("seePerson").style.display = "none";
         document.getElementById("addPerson").style.display = "block";
-        document.getElementById("editPerson").style.display = "none";
-        document.getElementById("deletePerson").style.display = "none";
       }
      </script>
    
     <title>krak</title>
 </head>
 <body>
+
+
   <div class="vertical-menu">
     <div>
       <ul id="menu" class="menu">
@@ -58,6 +54,7 @@
 
 </html>
 
+
 <template data-id="page-home">
   <h2>Welcome to the people's search engine</h2>
   <img src="./images/3musk.jpg" alt="musketers">
@@ -67,14 +64,13 @@
   <div id="people-menu" style="display: block; margin-bottom: 1em;">
     <a id="page-allPerson" href="#" onclick="seePerson()" >All people</a>
     <a id="page-addPerson" href="#" onclick="addPerson()" >Add person</a>
-    <div class="search-container">
-      <label for="searchPeople"></label>
-      <input class="people-search" id="people-search" type="search" placeholder="Search..">
-    </div>
   </div>
 
   <div class="people_content" id="seePerson" style="display: block">
-    <h1>All people</h1>
+    <h3 id="people-header">
+      <span>All People</span>
+      <input type="search" placeholder="Search.." class="people-search" id="search-input-people" data-table="people-table">
+    </h3>
     <table class="people-table">
       <thead>
         <tr>
@@ -85,13 +81,9 @@
           <th>Street</th>
           <th>Zipcode</th>
           <th>City</th>
-          <th></th>
-          <th></th>
         </tr>
       </thead>
       <tbody id="people-rows">
-        <td><button onclick="app.Edit(' + i + ')">Edit</button></td>
-        <td><button onclick="app.Delete(' + i + ')">Delete</button></td>
       </tbody>
     </table>
   </div>
@@ -119,15 +111,6 @@
     </form>
     <p id="person-info-all"></p>
   </div>
-
-  <div class="people_content" id="editPerson" style="display: none">
-    <h1>Edit page</h1>
-  </div>
-
-  <div class="people_content" id="deletePerson" style="display: none">
-    <h1>Delete page</h1>
-  </div>
-
 </template>
 
 <template data-id="page-hobby">

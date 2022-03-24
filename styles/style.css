@@ -20,13 +20,18 @@ ul {
   padding-top: 8px;
 }
 
-#people-search{
-  width: 300px;
+.people-search{
+  min-width: 300px;
+  max-width: 400;
   border-radius: 5px;
-  margin: auto;
   padding: 6px 16px;
+  font-size: 0.8em;
+  background-color: whitesmoke;
+}
 
-  
+#people-header{
+  display: flex;
+  justify-content: space-between;
 }
 
 .search-container input[type=text] {

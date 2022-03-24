@@ -21,7 +21,7 @@ export function getAllPeople(){
 
 function makeRows(rows){
   const trows = rows.map(people=> `
-  <tr>
+  <tr class="rows-with-people">
   <td> ${people.firstName} </td>
   <td> ${people.lastName} </td>
   <td> ${people.email} </td>
@@ -29,7 +29,6 @@ function makeRows(rows){
   <td> ${people.street} </td>
   <td> ${people.zipcode} </td>
   <td> ${people.city} </td>
-
   </tr>
   `).join("\n")
   document.getElementById("people-rows").innerHTML = trows

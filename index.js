@@ -2,6 +2,7 @@ import{renderTemplate, setActive, showPage} from "./utils.js"
 import{showHobbies, searchHobbyHandler} from "./js-pages/createHobby.js";
 import{getAllPeople} from "./js-pages/seePeoplePage.js"
 import{addPersonElement} from "./js-pages/addPerson.js"
+import{searchPeople} from "./js-pages/peoplePage.js"
 
 function renderMenuItems(evt) {
     const element = evt.target
@@ -16,6 +17,8 @@ function renderMenuItems(evt) {
       case "page-people": {
         getAllPeople()
         addPersonElement()
+        searchPeople()
+
         break
       }
       case "page-hobby": {
@@ -26,5 +29,5 @@ function renderMenuItems(evt) {
     }
   }
 
-  document.getElementById("menu").onclick = renderMenuItems;
+document.getElementById("menu").onclick = renderMenuItems;
 showPage("page-home") //Set the default page to render
