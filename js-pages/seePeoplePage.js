@@ -22,7 +22,6 @@ export function getAllPeople(){
 function makeRows(rows){
   const trows = rows.map(people=> `
   <tr>
-  <td> ${people.id} </td>
   <td> ${people.firstName} </td>
   <td> ${people.lastName} </td>
   <td> ${people.email} </td>
