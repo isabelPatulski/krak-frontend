@@ -1,6 +1,6 @@
 export function makeOptions(method, body) {
     const opts = {
-      method: method,
+      method: method, 
       headers: {
         "Content-type": "application/json",
         "Accept": "application/json"
