@@ -33,24 +33,11 @@
         document.getElementById("deletePerson").style.display = "none";
       }
 
-      function addperson() {
+      function addPerson() {
         document.getElementById("seePerson").style.display = "none";
         document.getElementById("addPerson").style.display = "block";
         document.getElementById("editPerson").style.display = "none";
         document.getElementById("deletePerson").style.display = "none";
-      }
-        
-      function editPerson() {
-        document.getElementById("seePerson").style.display = "none";
-        document.getElementById("addPerson").style.display = "none";
-        document.getElementById("editPerson").style.display = "block";
-        document.getElementById("deletePerson").style.display = "none";
-      }
-      function deletePerson() {
-        document.getElementById("seePerson").style.display = "none";
-        document.getElementById("addPerson").style.display = "none";
-        document.getElementById("editPerson").style.display = "none";
-        document.getElementById("deletePerson").style.display = "block";
       }
      </script>
    
@@ -78,10 +65,8 @@
 
 <template data-id="page-people">
   <div id="people-menu" style="display: block; margin-bottom: 1em;">
-    <a id="page-allperson" href="#" onclick="seePerson()" >All people</a>
-    <a id="page-addPerson" href="#" onclick="addperson()" >Add person</a>
-    <a id="page-editPerson" href="#" onclick="editPerson()">Edit person</a>
-    <a id="page-deletePerson" href="#" onclick="deletePerson()">Delete person</a>
+    <a id="page-allPerson" href="#" onclick="seePerson()" >All people</a>
+    <a id="page-addPerson" href="#" onclick="addPerson()" >Add person</a>
     <div class="search-container">
       <label for="searchPeople"></label>
       <input class="people-search" id="people-search" type="search" placeholder="Search..">
@@ -101,9 +86,14 @@
           <th>Street</th>
           <th>Zipcode</th>
           <th>City</th>
+          <th></th>
+          <th></th>
         </tr>
       </thead>
-      <tbody id="people-rows"></tbody>
+      <tbody id="people-rows">
+        <td><button onclick="app.Edit(' + i + ')">Edit</button></td>
+        <td><button onclick="app.Delete(' + i + ')">Delete</button></td>
+      </tbody>
     </table>
   </div>
 
