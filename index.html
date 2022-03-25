@@ -68,7 +68,7 @@
     <a id="page-allPerson" href="#" onclick="seePerson()" >All people</a>
     <a id="page-addPerson" href="#" onclick="addPerson()" >Add person</a>
     <div class="search-container">
-      <label for="searchPeople"></label>
+      <!--<label for="searchPeople"></label>-->
       <input class="people-search" id="people-search" type="search" placeholder="Search..">
     </div>
   </div>
@@ -78,6 +78,7 @@
     <table class="people-table">
       <thead>
         <tr>
+          <th></th>
           <th>ID</th>
           <th>First name</th>
           <th>Last name</th>
@@ -87,12 +88,9 @@
           <th>Zipcode</th>
           <th>City</th>
           <th></th>
-          <th></th>
         </tr>
       </thead>
       <tbody id="people-rows">
-        <td><button onclick="app.Edit(' + i + ')">Edit</button></td>
-        <td><button onclick="app.Delete(' + i + ')">Delete</button></td>
       </tbody>
     </table>
   </div>
@@ -114,7 +112,7 @@
       <div class='autocomplete-container'>
         <input type="text" id="adresse" placeholder="Addresse">
       </div>
-      <p style="display: none;">Valgt adresse: <span id="valgtadresse"></p>
+      <p style="display: none;">Valgt adresse: <span id="valgtadresse"></span></p>
       <br>
       <button id="btn-add-person">Add person</button>
     </form>

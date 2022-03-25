@@ -1,4 +1,6 @@
 import {LOCAL_SERVER_URL} from "../settings.js"
+import {editPerson} from "./editPeople.js";
+
 const URL = LOCAL_SERVER_URL+"/people"
 
 
@@ -8,7 +10,7 @@ export function getAllPeople(){
   if(allPeople.length > 0){
     makeRows(allPeople)
     return
-  } 
+  }
   fetch(URL)
   .then(res=>res.json())
   .then(people=>{
@@ -22,6 +24,7 @@ export function getAllPeople(){
 function makeRows(rows){
   const trows = rows.map(people=> `
   <tr>
+  <td><button id="btn-edit-person" type="button" class="editButton" onclick="editPerson()" >Edit</button><td>
   <td> ${people.id} </td>
   <td> ${people.firstName} </td>
   <td> ${people.lastName} </td>
@@ -30,6 +33,8 @@ function makeRows(rows){
   <td> ${people.street} </td>
   <td> ${people.zipcode} </td>
   <td> ${people.city} </td>
+  <td><button id="btn-delete-person" type="button" class="deleteButton">Delete</button><td>
+  
 
   </tr>
   `).join("\n")
