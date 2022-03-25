@@ -20,3 +20,4 @@ fetch(URL, makeOptions("POST", person))
     })
     .catch(error => console.error(error))
 }
+

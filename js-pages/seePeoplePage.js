@@ -24,7 +24,7 @@ export function getAllPeople(){
 function makeRows(rows){
   const trows = rows.map(people=> `
   <tr>
-  <td><button id="btn-edit-person" type="button" class="editButton" onclick="editPerson()" >Edit</button><td>
+  <td><button id="btn-edit-person" type="button" class="editButton" >Edit</button><td>
   <td> ${people.id} </td>
   <td> ${people.firstName} </td>
   <td> ${people.lastName} </td>

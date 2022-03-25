@@ -1,14 +1,9 @@
+import {LOCAL_SERVER_URL} from "../settings.js"
 
-/*const getData = () =>{
-    fetch('http://localhost:8080/hobbies').then(r => res.json()).then(hobbies => {
-        createHobbyTable()
 
-        for (const hobbies of hobbies) {
-            let hobbyIndex = hobbies.indexOf(hobby) + 1
-            appendHobbies(hobbies, hobbyIndex)
-        }
-    }
-*/
+const URL = LOCAL_SERVER_URL+"/hobbies/all"
+
+let allHobbies = []
 
 
 export function showHobbies(){
@@ -16,6 +11,8 @@ export function showHobbies(){
     let table = document.getElementById("hobby-table")
     generateTableHeader(table);
     generateTableRows(table);
+
+
 }
 
 function generateTableHeader(table) {
@@ -35,14 +32,31 @@ function insertHobbyRow(table, hobby) {
     cell.appendChild(text);
 }
 
-function generateTableRows(table, data) {
-    //for (let element of data) {
-        insertHobbyRow(table, "Painting")
-        insertHobbyRow(table,"Photography")
-        insertHobbyRow(table,"Running")
-        insertHobbyRow(table,"Eating")
-        insertHobbyRow(table,"Ice skating")
-        insertHobbyRow(table,"Sleeping")
+function generateHobbyRows(rows){
+    const trows = rows.map(hobbies=> `
+  <tr>
+  <td> ${hobbies.name} </td>
+  <td> ${hobbies.inOut} </td>
+  <td> ${hobbies.link} </td>
+  </tr>
+  `).join("\n")
+    document.getElementById("hobby-rows").innerHTML = trows
+}
+
+export function fetchHobbyData() {
+
+    if(allHobbies.length > 0){
+        generateHobbyRows(allHobbies)
+        return
+    }
+    fetch(URL)
+        .then(res=>res.json())
+        .then(hobbies=>{
+
+            generateHobbyRows(hobbies)
+            allHobbies = hobbies
+        })
+        .catch(e=>console.error(e))
 
     //}
 }
@@ -52,25 +66,25 @@ export function searchHobbyHandler(){
     document.getElementById("hobby-search").oninput = function () {searchHobby()}
 }
 
-export function searchHobby(){
-        // Declare variables
-        var input, filter, table, tr, td, i, txtValue;
-        input = document.getElementById("hobby-search");
-        filter = input.value.toUpperCase();
-        table = document.getElementById("hobby-table");
-        tr = table.getElementsByTagName("tr");
-        // Loop through all table rows, and hide those who don't match the search query
-        for (i = 0; i < tr.length; i++) {
-            td = tr[i].getElementsByTagName("td")[0];
-            if (td) {
-                txtValue = td.textContent || td.innerText;
-                //Her sker sammenligningen
-                if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                    tr[i].style.display = "";
-                } else {
-                    tr[i].style.display = "none";
-                }
+export function searchHobby() {
+    // Declare variables
+    var input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("hobby-search");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("hobby-table");
+    tr = table.getElementsByTagName("tr");
+    // Loop through all table rows, and hide those who don't match the search query
+    for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        if (td) {
+            txtValue = td.textContent || td.innerText;
+            //Her sker sammenligningen
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
             }
         }
+    }
 
 }

@@ -110,7 +110,7 @@
       <br>
       <label for='adresse'></label>
       <div class='autocomplete-container'>
-        <input type="text" id="adresse" placeholder="Addresse">
+        <input type="text" id="adresse" placeholder="Address">
       </div>
       <p style="display: none;">Valgt adresse: <span id="valgtadresse"></span></p>
       <br>
@@ -129,21 +129,33 @@
 
 </template>
 
-<template data-id="page-hobby">
+<template data-id="page-hobby" class="people_content">
   <html lang="en">
   <head>
     <meta charset="UTF-8">
     <title>Build a table</title>
   </head>
   <body>
-  <h2>All the hobbies you could dream off!</h2>
+
+  <h2 class="people-header">
+    <span> All the hobbies you could dream off!</span>
   <div class="search-container">
     <form>
-      <input id="hobby-search" type="text" placeholder="Search..">
+      <input id="hobby-search" type="text" placeholder="Search.." class ="people-search">
       <!-- <button id="btn-search-hobby" type="button" ><img src="./images/outline_search_black_24dp.png" alt="search" style="height: 1em; width: 1em;"> </button> -->
     </form>
+
   </div>
-  <table id="hobby-table" >
+    </h2>
+  <table id="hobby-table" class ="data-table" >
+    <thead>
+    <tr>
+      <th>Hobby</th>
+      <th>Indoor/Outdoor</th>
+      <th>Link</th>
+    </tr>
+    </thead>
+    <tbody id="hobby-rows"></tbody>
 
   </table>
   </body>
