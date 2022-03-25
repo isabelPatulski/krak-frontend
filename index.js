@@ -1,7 +1,8 @@
 import{renderTemplate, setActive, showPage} from "./utils.js"
-import{showHobbies, searchHobbyHandler} from "./js-pages/createHobby.js";
+import{showHobbies, searchHobbyHandler} from "./js-pages/createHobby.js"
 import{getAllPeople} from "./js-pages/seePeoplePage.js"
 import{addPersonElement} from "./js-pages/addPerson.js"
+import{searchPerson} from "./js-pages/addPerson.js"
 import{setDawa} from "./Dawa/script.js"
 
 function renderMenuItems(evt) {
@@ -18,7 +19,9 @@ function renderMenuItems(evt) {
         getAllPeople()
         setDawa()
         addPersonElement()
-                break
+        searchPeople()
+
+       break
       }
       case "page-hobby": {
         showHobbies()
@@ -28,5 +31,5 @@ function renderMenuItems(evt) {
     }
   }
 
-  document.getElementById("menu").onclick = renderMenuItems;
+document.getElementById("menu").onclick = renderMenuItems;
 showPage("page-home") //Set the default page to render

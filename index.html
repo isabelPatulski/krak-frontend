@@ -21,14 +21,13 @@
 
 
        <!--saying that script takes place in index.js-->
+
      <script type="module" src="index.js"></script>
 
      <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.min.js"></script>
      <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
      <script src="Dawa/dawa-autocomplete2.min.js"></script>
     
-         
-
      <script>
       function seePerson() {
         document.getElementById("seePerson").style.display = "block";
@@ -44,6 +43,8 @@
     <title>krak</title>
 </head>
 <body>
+
+
   <div class="vertical-menu">
     <div>
       <ul id="menu" class="menu">
@@ -57,6 +58,7 @@
 </body>
 
 </html>
+
 
 <template data-id="page-home">
   <h2>Welcome to the people's search engine</h2>
@@ -73,7 +75,10 @@
   </div>
 
   <div class="people_content" id="seePerson" style="display: block">
-    <h1>All people</h1>
+    <h3 id="people-header">
+      <span>All People</span>
+      <input type="search" placeholder="Search.." class="people-search" id="search-input-people" data-table="people-table">
+    </h3>
     <table class="people-table">
       <thead>
         <tr>
@@ -84,8 +89,6 @@
           <th>Street</th>
           <th>Zipcode</th>
           <th>City</th>
-          <th></th>
-          <th></th>
         </tr>
       </thead>
       <tbody id="people-rows">
@@ -111,15 +114,6 @@
     </form>
     <p id="person-info-all"></p>
   </div>
-
-  <div class="people_content" id="editPerson" style="display: none">
-    <h1>Edit page</h1>
-  </div>
-
-  <div class="people_content" id="deletePerson" style="display: none">
-    <h1>Delete page</h1>
-  </div>
-
 </template>
 
 <template data-id="page-hobby">
