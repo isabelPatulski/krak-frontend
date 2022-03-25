@@ -2,6 +2,7 @@ import{renderTemplate, setActive, showPage} from "./utils.js"
 import{showHobbies, searchHobbyHandler} from "./js-pages/createHobby.js";
 import{getAllPeople} from "./js-pages/seePeoplePage.js"
 import{addPersonElement} from "./js-pages/addPerson.js"
+import{setDawa} from "./Dawa/script.js"
 
 function renderMenuItems(evt) {
     const element = evt.target
