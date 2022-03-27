@@ -4,6 +4,7 @@ import{getAllPeople} from "./js-pages/seePeoplePage.js"
 import{addPersonElement} from "./js-pages/addPerson.js"
 import{searchPeopleFunction} from "./js-pages/peoplePage.js"
 import{setDawa} from "./Dawa/script.js"
+import {setupLoginHandlers, logout, updateLoginDependentComponents} from "./js-pages/login.js"
 
 function renderMenuItems(evt) {
     const element = evt.target
@@ -28,6 +29,14 @@ function renderMenuItems(evt) {
         searchHobbyHandler()
         break
       }
+        case "page-login": {
+            setupLoginHandlers()
+            break
+        }
+        case "page-logout": {
+            logout()
+            break
+        }
     }
   }
 
