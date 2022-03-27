@@ -7,10 +7,12 @@ export function makeOptions(method, body) {
       }
     }
 
+    if (addToken) {
+        opts.headers.Authorization = "Bearer " + sessionStorage.getItem("token")
+    }
+
     if (body) {
       opts.body = JSON.stringify(body);
     }
     return opts;
   }
-
-  
