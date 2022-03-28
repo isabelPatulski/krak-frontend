@@ -23,6 +23,7 @@ export function getAllPeople(){
 function makeRows(rows){
   const trows = rows.map(people=> `
   <tr class="rows-with-people">
+  <td><button id="btn-edit-person" type="button" class="editButton" >Edit</button><td>
   <td> ${people.id} </td>
   <td> ${people.firstName} </td>
   <td> ${people.lastName} </td>
@@ -31,6 +32,7 @@ function makeRows(rows){
   <td> ${people.street} </td>
   <td> ${people.zipcode} </td>
   <td> ${people.city} </td>
+  <td><button id="btn-delete-person" type="button" class="deleteButton">Delete</button><td>
   </tr>
   `).join("\n")
   document.getElementById("people-rows").innerHTML = trows
