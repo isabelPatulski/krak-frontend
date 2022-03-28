@@ -1,5 +1,5 @@
 import {LOCAL_SERVER_URL} from "../settings.js"
-const URL = LOCAL_SERVER_URL+"/people"
+const URL = LOCAL_SERVER_URL+"/person/people"
 
 
 let allPeople = []
@@ -22,6 +22,7 @@ export function getAllPeople(){
 function makeRows(rows){
   const trows = rows.map(people=> `
   <tr class="rows-with-people">
+  <td> ${people.id} </td>
   <td> ${people.firstName} </td>
   <td> ${people.lastName} </td>
   <td> ${people.email} </td>
