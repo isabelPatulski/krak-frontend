@@ -15,6 +15,7 @@ export function getAllPeople(){
     
     makeRows(people)
     allPeople = people
+    console.log(people)
   })
   .catch(e=>console.error(e))
 }

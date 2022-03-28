@@ -1,11 +1,12 @@
 import {makeOptions} from "../fetchUtils.js"
 import {LOCAL_SERVER_URL} from "../settings.js"
-const URL = LOCAL_SERVER_URL
+const URL = LOCAL_SERVER_URL + "/person"
 
 
 export function addPersonElement(){
     document.getElementById("btn-add-person").onclick = addPerson
 }
+
 function addPerson(){
 const person = {}
 person.firstName = document.getElementById("input-firstName").value
